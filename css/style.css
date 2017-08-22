@@ -1,0 +1,44 @@
+body{
+  text-align: center;
+}
+
+h1 {
+  line-height: 50px;
+  padding-bottom: 40px;
+}
+
+div{
+  width: 600px;
+  text-align: center;
+}
+
+
+.col {
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  height: 150px;
+  padding-top: 50px;
+}
+
+
+.top-row,
+.middle-row {
+  border-bottom: 1px solid black;
+}
+
+.vertical,
+.vertical-line,
+.vertical-line2,
+.vertical-line3,
+.vertical-line4,
+.vertical-line5  {
+  border-right: 1px solid black;
+  height: 150px;
+}
+
+.btn {
+  margin-top: 20px;
+  color: blue;
+  text-align: center;
+}
