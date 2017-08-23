@@ -7,7 +7,18 @@ h1 {
   padding-bottom: 40px;
 }
 
-div{
+h1:win{
+  animation-name: <win-title>;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+.container-fluid{
   width: 600px;
   text-align: center;
 }
@@ -42,3 +53,61 @@ div{
   color: blue;
   text-align: center;
 }
+
+.feedback {
+  z-index: 3;
+  margin: 0 auto;
+  display: flex;
+}
+
+.win-feedback {}
+.lose-feedback {}
+.draw-feedback {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: -500px;
+  background-color: red;
+  animation-name: stretch;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.3);
+    background-color: red;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: orange;
+  }
+  100% {
+    transform: scale(1.5);
+    background-color: yellow;
+  }
+}
+
+@@keyframes win-title {
+  0% {
+    transform: scale(.3);
+    text-decoration-color:
+    border-radius: 100%;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/*body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}*/

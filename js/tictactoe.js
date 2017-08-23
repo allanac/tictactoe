@@ -34,7 +34,9 @@ $(document).ready(function(){
   if (playerWin !== true && computerWin !== true){
     checkDraw(grid);
   }
-
+  if (playerWin === true){
+    $('.feedback').toggleClass('draw-feedback');
+  }
   });
 });
 
