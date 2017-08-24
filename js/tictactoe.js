@@ -34,8 +34,11 @@ $(document).ready(function(){
   if (playerWin !== true && computerWin !== true){
     checkDraw(grid);
   }
-  if (playerWin === true){
-    $('.feedback').toggleClass('draw-feedback');
+  else if (playerWin === true){
+    $('.win-feedback').addClass('win-play');
+  }
+  else if (computerWin === true){
+    $('.lose-feedback').addClass('lose-play');
   }
   });
 });
@@ -45,13 +48,15 @@ function newGame(grid) {
 
   $('.btn').click(function(){
     $('.col').html(' ');
-  for (i = 0; i < grid.length; i++) {
-   for (j = 0; j < grid.length; j++) {
-      {
+    for (i = 0; i < grid.length; i++) {
+      for (j = 0; j < grid.length; j++) {
         grid[i][j] = " ";
-        }
       }
     }
+
+    $('.win-feedback').removeClass('win-play');
+    $('.lose-feedback').removeClass('lose-play');
+    $('.draw-feedback').removeClass('draw-play');
 
 });
 
@@ -70,6 +75,7 @@ function checkDraw(grid){
       }
     if (emptySpaces.length === 0){
       alert('Draw!');
+      $('.draw-feedback').addClass('draw-play');
     }
 };
 
@@ -176,12 +182,14 @@ function playerMove(grid){
       if (grid[0][0] == 'X' && grid[0][1] == 'X' && grid [0][2] == 'X')
           {
           alert('X Wins!');
+
           return true;
           }
 
       else if (grid[1][0] == 'X' && grid[1][1] == 'X' && grid [1][2] == 'X')
           {
             alert('X Wins!');
+
             return true;
           }
 
@@ -197,17 +205,20 @@ function playerMove(grid){
       else if (grid[0][0] == 'X' && grid[1][0] == 'X' && grid [2][0] == 'X')
           {
           alert('X Wins!');
+
           return true;
           }
 
       else if (grid[0][1] == 'X' && grid[1][1] == 'X' && grid [2][1] == 'X')
           {
             alert('X Wins!');
+
             return true;
           }
       else if (grid[0][2] == 'X' && grid[1][2] == 'X' && grid [2][2] == 'X')
           {
         alert('X Wins!');
+
         return true;
           }
 
@@ -216,11 +227,13 @@ function playerMove(grid){
     else if (grid[0][0] == 'X' && grid[1][1] == 'X' && grid [2][2] == 'X')
           {
           alert('X Wins!');
+
           return true;
           }
       else if (grid[0][2] == 'X' && grid[1][1] == 'X' && grid [2][0] == 'X')
           {
             alert('X Wins!');
+
             return true;
           }
 
