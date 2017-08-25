@@ -8,6 +8,13 @@ h1 {
   padding-bottom: 40px;
 }
 
+.heading {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+
+}
+
 .container-fluid{
   width: 600px;
   text-align: center;
@@ -498,4 +505,37 @@ h1 {
 .text-animation li:nth-child(9)
 {
   animation-delay: .1s;
+}
+
+/*__________With A Twist Text____________*/
+
+.special-game {
+  position: absolute;
+  left: 65%;
+  top: 14%;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  color: #455A64;
+  -ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Chrome, Safari, Opera */
+  transform: rotate(-20deg);
+}
+
+.rotateIn {
+  animation: rotateIn 2s 2;
+}
+
+
+@keyframes rotateIn {
+  0% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform-origin: right;
+    transform: none;
+    opacity: 1;
+  }
 }

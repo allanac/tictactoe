@@ -3,6 +3,8 @@ var computerKey = 'O';
 var row = 0;
 var col = 0;
 var blockClicks = false;
+var playerScore = 0;
+var computerScore = 0;
 
 $(document).ready(function(){
 
@@ -43,12 +45,14 @@ $(document).ready(function(){
   else if (playerWin === true){
     blockClicks = true;
     $('.win-feedback').addClass('win-play');
-    playWin ();
+    keepScore(playerScore);
+    playLose ();
   }
   else if (computerWin === true){
     blockClicks = true;
     $('.lose-feedback').addClass('lose-play');
-    playLose();
+    keepScore(computerScore);
+    playWin();
   }
   });
 });
@@ -91,20 +95,21 @@ function checkDraw(grid){
   }
 };
 
-function keepScore(computerMove,playerMove){
+function keepScore(winner){
 
-  var playerScore = 0;
-  var computerScore = 0;
-
-  if (computerMove === true)
-  {
-    computerScore ++;
-  }
-  else if (playerMove)
+if (winner === playerKey)
   {
     playerScore ++;
+    $('.pScore').html(' ');
+    return;
   }
+  else
+  {
+    computerScore ++;
+    console.log(computerScore);
+    return;
 
+  }
 };
 
 function computerMove(grid){
@@ -250,3 +255,7 @@ function playDraw()
     var audio = document.getElementById("drawAudio");
     audio.play();
 };
+
+$('.rotateIn').click(function() {
+  alert("This is TicTacToe with a Twist. Try to Outsmart the computer so that You lose or get a draw :)");
+});
