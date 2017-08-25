@@ -45,13 +45,11 @@ $(document).ready(function(){
   else if (playerWin === true){
     blockClicks = true;
     $('.win-feedback').addClass('win-play');
-    keepScore(playerScore);
     playLose ();
   }
   else if (computerWin === true){
     blockClicks = true;
     $('.lose-feedback').addClass('lose-play');
-    keepScore(computerScore);
     playWin();
   }
   });
